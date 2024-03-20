@@ -23,7 +23,7 @@ const GoogleAuth = ({ prefix }) => {
             }
 
             const userRef = doc(firestore, "users", newUser.user.uid);
-            const userSnap = await getDoc(newUser);
+            const userSnap = await getDoc(userRef);
 
             if (userSnap.exists()) {
                 // login
